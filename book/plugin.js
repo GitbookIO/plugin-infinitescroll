@@ -1,6 +1,3 @@
-
-
-
 require(["gitbook", "core/navigation"], function(gitbook, navigation) {
     gitbook.events.bind("page.change", function() {
         var prev = 0;
