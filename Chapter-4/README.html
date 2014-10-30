@@ -1,0 +1,463 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Backbone of the OS and C++ runtime | How to Make a Computer Operating System</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.1.1">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../Chapter-5/README.html" />
+    
+    
+    <link rel="prev" href="../Chapter-3/README.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="4" data-basepath=".." data-revision="1414680633850">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="Chapter-1/README.html">
+            
+                
+                    <a href="../Chapter-1/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         Introduction about the x86 architecture and about our OS
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="Chapter-2/README.html">
+            
+                
+                    <a href="../Chapter-2/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         Setup the development environment
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="Chapter-3/README.html">
+            
+                
+                    <a href="../Chapter-3/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         First boot with GRUB
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="4" data-path="Chapter-4/README.html">
+            
+                
+                    <a href="../Chapter-4/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         Backbone of the OS and C++ runtime
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="Chapter-5/README.html">
+            
+                
+                    <a href="../Chapter-5/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         Base classes for managing x86 architecture
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="Chapter-6/README.html">
+            
+                
+                    <a href="../Chapter-6/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         GDT
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="Chapter-7/README.html">
+            
+                
+                    <a href="../Chapter-7/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         IDT and interrupts
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="Chapter-8/README.html">
+            
+                
+                    <a href="../Chapter-8/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         Memory management: physical and virtual
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" >
+            
+            <span><b>9.</b> Process management and multitasking</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10" >
+            
+            <span><b>10.</b> External program execution: ELF files</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11" >
+            
+            <span><b>11.</b> Userland and syscalls</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12" >
+            
+            <span><b>12.</b> Modular drivers</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13" >
+            
+            <span><b>13.</b> Some basics modules: console, keyboard</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14" >
+            
+            <span><b>14.</b> IDE Hard disks</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15" >
+            
+            <span><b>15.</b> DOS Partitions</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16" >
+            
+            <span><b>16.</b> EXT2 read-only filesystems</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="17" >
+            
+            <span><b>17.</b> Standard C library (libC)</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="18" >
+            
+            <span><b>18.</b> UNIX basic tools: sh, cat</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="19" >
+            
+            <span><b>19.</b> Lua interpreter</span>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >How to Make a Computer Operating System</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_4">
+                    
+                        <h2 id="chapter-4-backbone-of-the-os-and-c-runtime">Chapter 4: Backbone of the OS and C++ runtime</h2>
+<h4 id="c-kernel-run-time">C++ kernel run-time</h4>
+<p>A kernel can be programmed in C++, it is very similar to making a kernel in C, except that there are a few pitfalls you must take into account (runtime support, constructors, ...)</p>
+<p>The compiler will assume that all the necessary C++ runtime support is available by default, but as we are not linking in libsupc++ into your C++ kernel, we need to add some basic functions that can be found in the <a href="https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System/blob/master/src/kernel/runtime/cxx.cc" target="_blank">cxx.cc</a> file.</p>
+<p><strong>Caution:</strong> The operators <code>new</code> and <code>delete</code> cannot be used before virtual memory and pagination have been initialized.</p>
+<h4 id="basic-cc-functions">Basic C/C++ functions</h4>
+<p>The kernel code can&#39;t use functions from the standard libraries so we need to add some basic functions for managing memory and strings:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">void</span>     itoa(<span class="hljs-keyword">char</span> *buf, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> base);
+
+<span class="hljs-keyword">void</span> *    <span class="hljs-built_in">memset</span>(<span class="hljs-keyword">char</span> *dst,<span class="hljs-keyword">char</span> src, <span class="hljs-keyword">int</span> n);
+<span class="hljs-keyword">void</span> *    <span class="hljs-built_in">memcpy</span>(<span class="hljs-keyword">char</span> *dst, <span class="hljs-keyword">char</span> *src, <span class="hljs-keyword">int</span> n);
+
+<span class="hljs-keyword">int</span>     <span class="hljs-built_in">strlen</span>(<span class="hljs-keyword">char</span> *s);
+<span class="hljs-keyword">int</span>     <span class="hljs-built_in">strcmp</span>(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *dst, <span class="hljs-keyword">char</span> *src);
+<span class="hljs-keyword">int</span>     <span class="hljs-built_in">strcpy</span>(<span class="hljs-keyword">char</span> *dst,<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *src);
+<span class="hljs-keyword">void</span>     <span class="hljs-built_in">strcat</span>(<span class="hljs-keyword">void</span> *dest,<span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span> *src);
+<span class="hljs-keyword">char</span> *    <span class="hljs-built_in">strncpy</span>(<span class="hljs-keyword">char</span> *destString, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *sourceString,<span class="hljs-keyword">int</span> maxLength);
+<span class="hljs-keyword">int</span>     <span class="hljs-built_in">strncmp</span>( <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* s1, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* s2, <span class="hljs-keyword">int</span> c );
+</code></pre>
+<p>These functions are defined in <a href="https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System/blob/master/src/kernel/runtime/string.cc" target="_blank">string.cc</a>, <a href="https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System/blob/master/src/kernel/runtime/memory.cc" target="_blank">memory.cc</a>, <a href="https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System/blob/master/src/kernel/runtime/itoa.cc" target="_blank">itoa.cc</a></p>
+<h4 id="c-types">C types</h4>
+<p>During the next step, we are going to use different types in our code, most of the types we are going to use unsigned types (all the bits are used to stored the integer, in signed types one bit is used to signal the sign):</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>     u8;
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span>     u16;
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span>     u32;
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>     u64;
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">signed</span> <span class="hljs-keyword">char</span>     s8;
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">signed</span> <span class="hljs-keyword">short</span>     s16;
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">signed</span> <span class="hljs-keyword">int</span>         s32;
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">signed</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>    s64;
+</code></pre>
+<h4 id="compile-our-kernel">Compile our kernel</h4>
+<p>Compiling a kernel is not the same thing as compiling a linux executable, we can&#39;t use a standard library and should have no dependencies to the system.</p>
+<p>Our <a href="https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System/blob/master/src/kernel/Makefile" target="_blank">Makefile</a> will define the process to compile and link our kernel.</p>
+<p>For x86 architecture, the followings arguments will be used for gcc/g++/ld:</p>
+<pre><code># Linker
+LD=ld
+LDFLAG= -melf_i386 -static  -L ./  -T ./arch/$(ARCH)/linker.ld
+
+# C++ compiler
+SC=g++
+FLAG= $(INCDIR) -g -O2 -w -trigraphs -fno-builtin  -fno-exceptions -fno-stack-protector -O0 -m32  -fno-rtti -nostdlib -nodefaultlibs 
+
+# Assembly compiler
+ASM=nasm
+ASMFLAG=-f elf -o
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Chapter-3/README.html" class="navigation navigation-prev " aria-label="Previous page: First boot with GRUB"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Chapter-5/README.html" class="navigation navigation-next " aria-label="Next page: Base classes for managing x86 architecture"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-infinitescroll/plugin.js"></script>
+    
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

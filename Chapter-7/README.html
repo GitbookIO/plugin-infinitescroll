@@ -1,0 +1,666 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>IDT and interrupts | How to Make a Computer Operating System</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.1.1">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../Chapter-8/README.html" />
+    
+    
+    <link rel="prev" href="../Chapter-6/README.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="7" data-basepath=".." data-revision="1414680633850">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="Chapter-1/README.html">
+            
+                
+                    <a href="../Chapter-1/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         Introduction about the x86 architecture and about our OS
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="Chapter-2/README.html">
+            
+                
+                    <a href="../Chapter-2/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         Setup the development environment
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="Chapter-3/README.html">
+            
+                
+                    <a href="../Chapter-3/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         First boot with GRUB
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="Chapter-4/README.html">
+            
+                
+                    <a href="../Chapter-4/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         Backbone of the OS and C++ runtime
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="Chapter-5/README.html">
+            
+                
+                    <a href="../Chapter-5/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         Base classes for managing x86 architecture
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="Chapter-6/README.html">
+            
+                
+                    <a href="../Chapter-6/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         GDT
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="7" data-path="Chapter-7/README.html">
+            
+                
+                    <a href="../Chapter-7/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         IDT and interrupts
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="Chapter-8/README.html">
+            
+                
+                    <a href="../Chapter-8/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         Memory management: physical and virtual
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" >
+            
+            <span><b>9.</b> Process management and multitasking</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10" >
+            
+            <span><b>10.</b> External program execution: ELF files</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11" >
+            
+            <span><b>11.</b> Userland and syscalls</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12" >
+            
+            <span><b>12.</b> Modular drivers</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13" >
+            
+            <span><b>13.</b> Some basics modules: console, keyboard</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14" >
+            
+            <span><b>14.</b> IDE Hard disks</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15" >
+            
+            <span><b>15.</b> DOS Partitions</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16" >
+            
+            <span><b>16.</b> EXT2 read-only filesystems</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="17" >
+            
+            <span><b>17.</b> Standard C library (libC)</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="18" >
+            
+            <span><b>18.</b> UNIX basic tools: sh, cat</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="19" >
+            
+            <span><b>19.</b> Lua interpreter</span>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >How to Make a Computer Operating System</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_7">
+                    
+                        <h2 id="chapter-7-idt-and-interrupts">Chapter 7: IDT and interrupts</h2>
+<p>An interrupt is a signal to the processor emitted by hardware or software indicating an event that needs immediate attention.</p>
+<p>There are 3 types of interrupts:</p>
+<ul>
+<li><strong>Hardware interrupts:</strong> are sent to the processor from an external device (keyboard, mouse, hard disk, ...). Hardware interrupts were introduced as a way to reduce wasting the processor&#39;s valuable time in polling loops, waiting for external events.</li>
+<li><strong>Software interrupts:</strong> are initiated voluntarily by the software. It&#39;s used to manage system calls.</li>
+<li><strong>Exceptions:</strong>  are used for errors or events occurring during program execution that are exceptional enough that they cannot be handled within the program itself (division by zero, page fault, ...)</li>
+</ul>
+<h4 id="the-keyboard-example">The keyboard example:</h4>
+<p>When the user pressed a key on the keyboard, the keyboard controller will signal an interrupt to the Interrupt Controller. If the interrupt is not masked, the controller will signal the interrupt to the processor, the processor will execute a routine to manage the interrupt (key pressed or key released), this routine could, for example, get the pressed key from the keyboard controller and print the key to the screen. Once the character processing routine is completed, the interrupted job can be resumed.</p>
+<h4 id="what-is-the-pic">What is the PIC?</h4>
+<p>The <a href="http://en.wikipedia.org/wiki/Programmable_Interrupt_Controller" target="_blank">PIC</a> (Programmable interrupt controller)is a device that is used to combine several sources of interrupt onto one or more CPU lines, while allowing priority levels to be assigned to its interrupt outputs. When the device has multiple interrupt outputs to assert, it asserts them in the order of their relative priority.</p>
+<p>The best known PIC is the 8259A, each 8259A can handle 8 devices but most computers have two controllers: one master and one slave, this allows the computer to manage interrupts from 14 devices.</p>
+<p>In this chapter, we will need to program this controller to initialize and mask interrupts.</p>
+<h4 id="what-is-the-idt">What is the IDT?</h4>
+<blockquote>
+<p>The Interrupt Descriptor Table (IDT) is a data structure used by the x86 architecture to implement an interrupt vector table. The IDT is used by the processor to determine the correct response to interrupts and exceptions.</p>
+</blockquote>
+<p>Our kernel is going to use the IDT to define the different functions to be executed when an interrupt occurred.</p>
+<p>Like the GDT, the IDT is loaded using the LIDTL assembly instruction. It expects the location of a IDT description structure:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">struct</span> idtr {
+    u16 limite;
+    u32 base;
+} __attribute__ ((packed));
+</code></pre>
+<p>The IDT table is composed of IDT segments with the following structure:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">struct</span> idtdesc {
+    u16 offset0_15;
+    u16 select;
+    u16 type;
+    u16 offset16_31;
+} __attribute__ ((packed));
+</code></pre>
+<p><strong>Caution:</strong> the directive <code>__attribute__ ((packed))</code> signal to gcc that the structure should use as little memory as possible. Without this directive, gcc includes some bytes to optimize the memory alignment and the access during execution.</p>
+<p>Now we need to define our IDT table and then load it using LIDTL. The IDT table can be stored wherever we want in memory, its address should just be signaled to the process using the IDTR registry.</p>
+<p>Here is a table of common interrupts (Maskable hardware interrupt are called IRQ):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">IRQ</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td>Programmable Interrupt Timer Interrupt</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td>Keyboard Interrupt</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td>Cascade (used internally by the two PICs. never raised)</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>COM2 (if enabled)</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td>COM1 (if enabled)</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td>LPT2 (if enabled)</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td>Floppy Disk</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td>LPT1</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td>CMOS real-time clock (if enabled)</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td>Free for peripherals / legacy SCSI / NIC</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td>Free for peripherals / SCSI / NIC</td>
+</tr>
+<tr>
+<td style="text-align:center">11</td>
+<td>Free for peripherals / SCSI / NIC</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td>PS2 Mouse</td>
+</tr>
+<tr>
+<td style="text-align:center">13</td>
+<td>FPU / Coprocessor / Inter-processor</td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td>Primary ATA Hard Disk</td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td>Secondary ATA Hard Disk</td>
+</tr>
+</tbody>
+</table>
+<h4 id="how-to-initialize-the-interrupts">How to initialize the interrupts?</h4>
+<p>This is a simple method to define an IDT segment</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">void</span> init_idt_desc(u16 select, u32 offset, u16 type, <span class="hljs-keyword">struct</span> idtdesc *desc)
+{
+    desc-&gt;offset0_15 = (offset &amp; <span class="hljs-number">0xffff</span>);
+    desc-&gt;select = select;
+    desc-&gt;type = type;
+    desc-&gt;offset16_31 = (offset &amp; <span class="hljs-number">0xffff0000</span>) &gt;&gt; <span class="hljs-number">16</span>;
+    <span class="hljs-keyword">return</span>;
+}
+</code></pre>
+<p>And we can now initialize the interupts:</p>
+<pre><code class="lang-cpp"><span class="hljs-preprocessor">#<span class="hljs-keyword">define</span> IDTBASE    0x00000000</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">define</span> IDTSIZE 0xFF</span>
+idtr kidtr;
+</code></pre>
+<pre><code class="lang-cpp"><span class="hljs-keyword">void</span> init_idt(<span class="hljs-keyword">void</span>)
+{
+    <span class="hljs-comment">/* Init irq */</span>
+    <span class="hljs-keyword">int</span> i;
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; IDTSIZE; i++)
+        init_idt_desc(<span class="hljs-number">0x08</span>, (u32)_asm_schedule, INTGATE, &amp;kidt[i]); <span class="hljs-comment">//</span>
+
+    <span class="hljs-comment">/* Vectors  0 -&gt; 31 are for exceptions */</span>
+    init_idt_desc(<span class="hljs-number">0x08</span>, (u32) _asm_exc_GP, INTGATE, &amp;kidt[<span class="hljs-number">13</span>]);        <span class="hljs-comment">/* #GP */</span>
+    init_idt_desc(<span class="hljs-number">0x08</span>, (u32) _asm_exc_PF, INTGATE, &amp;kidt[<span class="hljs-number">14</span>]);     <span class="hljs-comment">/* #PF */</span>
+
+    init_idt_desc(<span class="hljs-number">0x08</span>, (u32) _asm_schedule, INTGATE, &amp;kidt[<span class="hljs-number">32</span>]);
+    init_idt_desc(<span class="hljs-number">0x08</span>, (u32) _asm_int_1, INTGATE, &amp;kidt[<span class="hljs-number">33</span>]);
+
+    init_idt_desc(<span class="hljs-number">0x08</span>, (u32) _asm_syscalls, TRAPGATE, &amp;kidt[<span class="hljs-number">48</span>]);
+    init_idt_desc(<span class="hljs-number">0x08</span>, (u32) _asm_syscalls, TRAPGATE, &amp;kidt[<span class="hljs-number">128</span>]); <span class="hljs-comment">//48</span>
+
+    kidtr.limite = IDTSIZE * <span class="hljs-number">8</span>;
+    kidtr.base = IDTBASE;
+
+
+    <span class="hljs-comment">/* Copy the IDT to the memory */</span>
+    <span class="hljs-built_in">memcpy</span>((<span class="hljs-keyword">char</span> *) kidtr.base, (<span class="hljs-keyword">char</span> *) kidt, kidtr.limite);
+
+    <span class="hljs-comment">/* Load the IDTR registry */</span>
+    <span class="hljs-keyword">asm</span>(<span class="hljs-string">"lidtl (kidtr)"</span>);
+}
+</code></pre>
+<p>After intialization of our IDT, we need to activate interrupts by configuring the PIC. The following function will configure the two PICs by writting in their internal registries using the output ports of the processor <code>io.outb</code>. We configure the PICs using the ports:</p>
+<ul>
+<li>Master PIC: 0x20 and 0x21</li>
+<li>Slave PIC: 0xA0 and 0xA1</li>
+</ul>
+<p>For a PIC, there are 2 types of registries:</p>
+<ul>
+<li>ICW (Initialization Command Word): reinit the controller</li>
+<li>OCW (Operation Control Word): configure the controller once initialized (used to mask/unmask the interrupts)</li>
+</ul>
+<pre><code class="lang-cpp"><span class="hljs-keyword">void</span> init_pic(<span class="hljs-keyword">void</span>)
+{
+    <span class="hljs-comment">/* Initialization of ICW1 */</span>
+    io.outb(<span class="hljs-number">0x20</span>, <span class="hljs-number">0x11</span>);
+    io.outb(<span class="hljs-number">0xA0</span>, <span class="hljs-number">0x11</span>);
+
+    <span class="hljs-comment">/* Initialization of ICW2 */</span>
+    io.outb(<span class="hljs-number">0x21</span>, <span class="hljs-number">0x20</span>);    <span class="hljs-comment">/* start vector = 32 */</span>
+    io.outb(<span class="hljs-number">0xA1</span>, <span class="hljs-number">0x70</span>);    <span class="hljs-comment">/* start vector = 96 */</span>
+
+    <span class="hljs-comment">/* Initialization of ICW3 */</span>
+    io.outb(<span class="hljs-number">0x21</span>, <span class="hljs-number">0x04</span>);
+    io.outb(<span class="hljs-number">0xA1</span>, <span class="hljs-number">0x02</span>);
+
+    <span class="hljs-comment">/* Initialization of ICW4 */</span>
+    io.outb(<span class="hljs-number">0x21</span>, <span class="hljs-number">0x01</span>);
+    io.outb(<span class="hljs-number">0xA1</span>, <span class="hljs-number">0x01</span>);
+
+    <span class="hljs-comment">/* mask interrupts */</span>
+    io.outb(<span class="hljs-number">0x21</span>, <span class="hljs-number">0x0</span>);
+    io.outb(<span class="hljs-number">0xA1</span>, <span class="hljs-number">0x0</span>);
+}
+</code></pre>
+<h4 id="pic-icw-configurations-details">PIC ICW configurations details</h4>
+<p>The registries have to be configured in order.</p>
+<p><strong>ICW1 (port 0x20 / port 0xA0)</strong></p>
+<pre><code>|0|0|0|1|x|0|x|x|
+         |   | +--- with ICW4 (1) or without (0)
+         |   +----- one controller (1), or cascade (0)
+         +--------- triggering by level (level) (1) or by edge (edge) (0)
+</code></pre><p><strong>ICW2 (port 0x21 / port 0xA1)</strong></p>
+<pre><code>|x|x|x|x|x|0|0|0|
+ | | | | |
+ +----------------- base address for interrupts vectors
+</code></pre><p><strong>ICW2 (port 0x21 / port 0xA1)</strong></p>
+<p>For the master:</p>
+<pre><code>|x|x|x|x|x|x|x|x|
+ | | | | | | | |
+ +------------------ slave controller connected to the port yes (1), or no (0)
+</code></pre><p>For the slave:</p>
+<pre><code>|0|0|0|0|0|x|x|x|  pour l&#39;esclave
+           | | |
+           +-------- Slave ID which is equal to the master port
+</code></pre><p><strong>ICW4 (port 0x21 / port 0xA1)</strong></p>
+<p>It is used to define in which mode the controller should work.</p>
+<pre><code>|0|0|0|x|x|x|x|1|
+       | | | +------ mode &quot;automatic end of interrupt&quot; AEOI (1)
+       | | +-------- mode buffered slave (0) or master (1)
+       | +---------- mode buffered (1)
+       +------------ mode &quot;fully nested&quot; (1)
+</code></pre><h4 id="why-do-idt-segments-offset-our-asm-functions">Why do idt segments offset our ASM functions?</h4>
+<p>You should have noticed that when I&#39;m initializing our IDT segments, I&#39;m using offsets to segment the code in Assembly. The different functions are defined in <a href="https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System/blob/master/src/kernel/arch/x86/x86int.asm" target="_blank">x86int.asm</a> and are of the following scheme:</p>
+<pre><code class="lang-asm">%macro    SAVE_REGS 0
+    pushad
+    push ds
+    push es
+    push fs
+    push gs
+    push ebx
+    mov bx,0x10
+    mov ds,bx
+    pop ebx
+%endmacro
+
+%macro    RESTORE_REGS 0
+    pop gs
+    pop fs
+    pop es
+    pop ds
+    popad
+%endmacro
+
+%macro    INTERRUPT 1
+global _asm_int_%1
+_asm_int_%1:
+    SAVE_REGS
+    push %1
+    call isr_default_int
+    pop eax    ;;a enlever sinon
+    mov al,0x20
+    out 0x20,al
+    RESTORE_REGS
+    iret
+%endmacro
+</code></pre>
+<p>These macros will be used to define the interrupt segment that will prevent corruption of the different registries, it will be very useful for multitasking.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Chapter-6/README.html" class="navigation navigation-prev " aria-label="Previous page: GDT"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Chapter-8/README.html" class="navigation navigation-next " aria-label="Next page: Memory management: physical and virtual"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-infinitescroll/plugin.js"></script>
+    
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

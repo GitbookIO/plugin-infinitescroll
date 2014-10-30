@@ -1,0 +1,549 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>First boot with GRUB | How to Make a Computer Operating System</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.1.1">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../Chapter-4/README.html" />
+    
+    
+    <link rel="prev" href="../Chapter-2/README.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="3" data-basepath=".." data-revision="1414680633850">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="Chapter-1/README.html">
+            
+                
+                    <a href="../Chapter-1/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         Introduction about the x86 architecture and about our OS
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="Chapter-2/README.html">
+            
+                
+                    <a href="../Chapter-2/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         Setup the development environment
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="3" data-path="Chapter-3/README.html">
+            
+                
+                    <a href="../Chapter-3/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         First boot with GRUB
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="Chapter-4/README.html">
+            
+                
+                    <a href="../Chapter-4/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         Backbone of the OS and C++ runtime
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="Chapter-5/README.html">
+            
+                
+                    <a href="../Chapter-5/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         Base classes for managing x86 architecture
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="Chapter-6/README.html">
+            
+                
+                    <a href="../Chapter-6/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         GDT
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="Chapter-7/README.html">
+            
+                
+                    <a href="../Chapter-7/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         IDT and interrupts
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="Chapter-8/README.html">
+            
+                
+                    <a href="../Chapter-8/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         Memory management: physical and virtual
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" >
+            
+            <span><b>9.</b> Process management and multitasking</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10" >
+            
+            <span><b>10.</b> External program execution: ELF files</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11" >
+            
+            <span><b>11.</b> Userland and syscalls</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12" >
+            
+            <span><b>12.</b> Modular drivers</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13" >
+            
+            <span><b>13.</b> Some basics modules: console, keyboard</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14" >
+            
+            <span><b>14.</b> IDE Hard disks</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15" >
+            
+            <span><b>15.</b> DOS Partitions</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16" >
+            
+            <span><b>16.</b> EXT2 read-only filesystems</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="17" >
+            
+            <span><b>17.</b> Standard C library (libC)</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="18" >
+            
+            <span><b>18.</b> UNIX basic tools: sh, cat</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="19" >
+            
+            <span><b>19.</b> Lua interpreter</span>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >How to Make a Computer Operating System</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_3">
+                    
+                        <h2 id="chapter-3-first-boot-with-grub">Chapter 3: First boot with GRUB</h2>
+<h4 id="how-the-boot-works">How the boot works?</h4>
+<p>When an x86-based computer is turned on, it begins a complex path to get to the stage where control is transferred to our kernel&#39;s &quot;main&quot; routine (<code>kmain()</code>). For this course, we are only going to consider the BIOS boot method and not it&#39;s successor (UEFI).</p>
+<p>The BIOS boot sequence is: RAM detection -&gt; Hardware detection/Initialization -&gt; Boot sequence.</p>
+<p>The most important step for us is the &quot;Boot sequence&quot;, where the BIOS is done with its initialization and tries to transfer control to the next stage of the bootloader process.</p>
+<p>During the &quot;Boot sequence&quot;, the BIOS will try to determine a &quot;boot device&quot; (e.g. floppy disk, hard-disk, CD, USB flash memory device or network). Our Operating System will initially boot from the hard-disk (but it will be possible to boot it from a CD or a USB flash memory device in future). A device is considered bootable if the bootsector contains the valid signature bytes <code>0x55</code> and <code>0xAA</code> at offsets 511 and 512 respectively (called the magic bytes of Master Boot Record (MBR), This signature is represented (in binary) as 0b1010101001010101. The alternating bit pattern was thought to be a protection against certain failures (drive or controller). If this pattern is garbled or 0x00, the device is not considered bootable)</p>
+<p>BIOS physically searches for a boot device by loading the first 512 bytes from the bootsector of each device into physical memory, starting at the address <code>0x7C00</code> (1 KiB below the 32 KiB mark). When the valid signature bytes are detected, BIOS transfers control to the <code>0x7C00</code> memory address (via a jump instruction) in order to execute the bootsector code.</p>
+<p>Throughout this process the CPU has been running in 16-bit Real Mode (the default state for x86 CPUs in order to maintain backwards compatibility). To execute the 32-bit instructions within our kernel, a bootloader is required to switch the CPU into Protected Mode.</p>
+<h4 id="what-is-grub">What is GRUB?</h4>
+<blockquote>
+<p>GNU GRUB (short for GNU GRand Unified Bootloader) is a boot loader package from the GNU Project. GRUB is the reference implementation of the Free Software Foundation&#39;s Multiboot Specification, which provides a user the choice to boot one of multiple operating systems installed on a computer or select a specific kernel configuration available on a particular operating system&#39;s partitions.</p>
+</blockquote>
+<p>To make it simple, GRUB is the first thing booted by the machine (a boot-loader) and will simplify the loading of our kernel stored on the hard-disk.</p>
+<h4 id="why-are-we-using-grub">Why are we using GRUB?</h4>
+<ul>
+<li>GRUB is very simple to use</li>
+<li>Make it very simple to load 32bits kernels without needs of 16bits code</li>
+<li>Multiboot with Linux, Windows and others</li>
+<li>Make it easy to load external modules in memory</li>
+</ul>
+<h4 id="how-to-use-grub">How to use GRUB?</h4>
+<p>GRUB uses the Multiboot specification, the executable binary should be 32bits and must contain a special header (multiboot header) in its 8192 first bytes. Our kernel will be a ELF executable file (&quot;Executable and Linkable Format&quot;, a common standard file format for executables in most UNIX system).</p>
+<p>The first boot sequence of our kernel is written in Assembly: <a href="https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System/blob/master/src/kernel/arch/x86/start.asm" target="_blank">start.asm</a> and we use a linker file to define our executable structure: <a href="https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System/blob/master/src/kernel/arch/x86/linker.ld" target="_blank">linker.ld</a>.</p>
+<p>This boot process also initializes some of our C++ runtime, it will be described in the next chapter.</p>
+<p>Multiboot header structure:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">struct</span> multiboot_info {
+    u32 flags;
+    u32 low_mem;
+    u32 high_mem;
+    u32 boot_device;
+    u32 cmdline;
+    u32 mods_count;
+    u32 mods_addr;
+    <span class="hljs-keyword">struct</span> {
+        u32 num;
+        u32 size;
+        u32 addr;
+        u32 shndx;
+    } elf_sec;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> mmap_length;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> mmap_addr;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> drives_length;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> drives_addr;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> config_table;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> boot_loader_name;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> apm_table;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> vbe_control_info;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> vbe_mode_info;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> vbe_mode;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> vbe_interface_seg;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> vbe_interface_off;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> vbe_interface_len;
+};
+</code></pre>
+<p>You can use the command <code>mbchk kernel.elf</code> to validate your kernel.elf file against the multiboot standard. You can also use the command <code>nm -n kernel.elf</code> to validate the offset of the different objects in the ELF binary.</p>
+<h4 id="create-a-disk-image-for-our-kernel-and-grub">Create a disk image for our kernel and grub</h4>
+<p>The script <a href="https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System/blob/master/src/sdk/diskimage.sh" target="_blank">diskimage.sh</a> will generate a hard disk image that can be used by QEMU.</p>
+<p>The first step is to create a hard-disk image (c.img) using qemu-img:</p>
+<pre><code>qemu-img create c.img 2M
+</code></pre><p>We need now to partition the disk using fdisk:</p>
+<pre><code class="lang-bash">fdisk ./c.img
+
+<span class="hljs-comment"># Switch to Expert commands</span>
+&gt; x
+
+<span class="hljs-comment"># Change number of cylinders (1-1048576)</span>
+&gt; c
+&gt; <span class="hljs-number">4</span>
+
+<span class="hljs-comment"># Change number of heads (1-256, default 16):</span>
+&gt; h
+&gt; <span class="hljs-number">16</span>
+
+<span class="hljs-comment"># Change number of sectors/track (1-63, default 63)</span>
+&gt; s
+&gt; <span class="hljs-number">63</span>
+
+<span class="hljs-comment"># Return to main menu</span>
+&gt; r
+
+<span class="hljs-comment"># Add a new partition</span>
+&gt; n
+
+<span class="hljs-comment"># Choose primary partition</span>
+&gt; p
+
+<span class="hljs-comment"># Choose partition number</span>
+&gt; <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Choose first cylinder (1-4, default 1)</span>
+&gt; <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Choose last cylinder, +cylinders or +size{K,M,G} (1-4, default 4)</span>
+&gt; <span class="hljs-number">4</span>
+
+<span class="hljs-comment"># Toggle bootable flag</span>
+&gt; a
+
+<span class="hljs-comment"># Choose first partition for bootable flag</span>
+&gt; <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Write table to disk and exit</span>
+&gt; w
+</code></pre>
+<p>We need now to attach the created partition to the loop-device (which allows a file to be access like a block device) using losetup. The offset of the partition is passed as an argument and calculated using: <strong>offset= start_sector * bytes_by_sector</strong>.</p>
+<p>Using <code>fdisk -l -u c.img</code>, you get: 63 * 512 = 32256.</p>
+<pre><code class="lang-bash">losetup -o <span class="hljs-number">32256</span> /dev/loop1 ./c.img
+</code></pre>
+<p>We create a EXT2 filesystem on this new device using:</p>
+<pre><code class="lang-bash">mke2fs /dev/loop1
+</code></pre>
+<p>We copy our files on a mounted disk:</p>
+<pre><code class="lang-bash">mount  /dev/loop1 /mnt/
+cp -R bootdisk/* /mnt/
+umount /mnt/
+</code></pre>
+<p>Install GRUB on the disk:</p>
+<pre><code class="lang-bash">grub --device-map=/dev/null &lt;&lt; EOF
+device (hd0) ./c.img
+geometry (hd0) <span class="hljs-number">4</span> <span class="hljs-number">16</span> <span class="hljs-number">63</span>
+root (hd0,<span class="hljs-number">0</span>)
+setup (hd0)
+quit
+EOF
+</code></pre>
+<p>And finally we detach the loop device:</p>
+<pre><code class="lang-bash">losetup <span class="hljs-operator">-d</span> /dev/loop1
+</code></pre>
+<h4 id="see-also">See Also</h4>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/GNU_GRUB" target="_blank">GNU GRUB on Wikipedia</a></li>
+<li><a href="https://www.gnu.org/software/grub/manual/multiboot/multiboot.html" target="_blank">Multiboot specification</a></li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Chapter-2/README.html" class="navigation navigation-prev " aria-label="Previous page: Setup the development environment"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Chapter-4/README.html" class="navigation navigation-next " aria-label="Next page: Backbone of the OS and C++ runtime"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-infinitescroll/plugin.js"></script>
+    
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

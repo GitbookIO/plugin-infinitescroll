@@ -1,0 +1,512 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>GDT | How to Make a Computer Operating System</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.1.1">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../Chapter-7/README.html" />
+    
+    
+    <link rel="prev" href="../Chapter-5/README.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="6" data-basepath=".." data-revision="1414680633850">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="Chapter-1/README.html">
+            
+                
+                    <a href="../Chapter-1/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         Introduction about the x86 architecture and about our OS
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="Chapter-2/README.html">
+            
+                
+                    <a href="../Chapter-2/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         Setup the development environment
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="Chapter-3/README.html">
+            
+                
+                    <a href="../Chapter-3/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         First boot with GRUB
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="Chapter-4/README.html">
+            
+                
+                    <a href="../Chapter-4/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         Backbone of the OS and C++ runtime
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="Chapter-5/README.html">
+            
+                
+                    <a href="../Chapter-5/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         Base classes for managing x86 architecture
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="6" data-path="Chapter-6/README.html">
+            
+                
+                    <a href="../Chapter-6/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         GDT
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="Chapter-7/README.html">
+            
+                
+                    <a href="../Chapter-7/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         IDT and interrupts
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="Chapter-8/README.html">
+            
+                
+                    <a href="../Chapter-8/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         Memory management: physical and virtual
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" >
+            
+            <span><b>9.</b> Process management and multitasking</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10" >
+            
+            <span><b>10.</b> External program execution: ELF files</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11" >
+            
+            <span><b>11.</b> Userland and syscalls</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12" >
+            
+            <span><b>12.</b> Modular drivers</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13" >
+            
+            <span><b>13.</b> Some basics modules: console, keyboard</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14" >
+            
+            <span><b>14.</b> IDE Hard disks</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15" >
+            
+            <span><b>15.</b> DOS Partitions</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16" >
+            
+            <span><b>16.</b> EXT2 read-only filesystems</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="17" >
+            
+            <span><b>17.</b> Standard C library (libC)</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="18" >
+            
+            <span><b>18.</b> UNIX basic tools: sh, cat</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="19" >
+            
+            <span><b>19.</b> Lua interpreter</span>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >How to Make a Computer Operating System</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_6">
+                    
+                        <h2 id="chapter-6-gdt">Chapter 6: GDT</h2>
+<p>Thanks to GRUB, your kernel is no longer in real-mode, but already in <a href="http://en.wikipedia.org/wiki/Protected_mode" target="_blank">protected mode</a>, this mode allows us to use all the possibilities of the microprocessor such as virtual memory management, paging and safe multi-tasking.</p>
+<h4 id="what-is-the-gdt">What is the GDT?</h4>
+<p>The <a href="http://en.wikipedia.org/wiki/Global_Descriptor_Table" target="_blank">GDT</a> (&quot;Global Descriptor Table&quot;) is a data structure used to define the different memory areas: the base address, the size and access privileges like execute and write. These memory areas are called &quot;segments&quot;.</p>
+<p>We are going to use the GDT to define different memory segments:</p>
+<ul>
+<li><em>&quot;code&quot;</em>: kernel code, used to stored the executable binary code</li>
+<li><em>&quot;data&quot;</em>: kernel data</li>
+<li><em>&quot;stack&quot;</em>: kernel stack, used to stored the call stack during kernel execution</li>
+<li><em>&quot;ucode&quot;</em>: user code, used to stored the executable binary code for user program</li>
+<li><em>&quot;udata&quot;</em>: user program data</li>
+<li><em>&quot;ustack&quot;</em>: user stack, used to stored the call stack during execution in userland</li>
+</ul>
+<h4 id="how-to-load-our-gdt">How to load our GDT?</h4>
+<p>GRUB initializes a GDT but this GDT is does not correspond to our kernel.
+The GDT is loaded using the LGDT assembly instruction. It expects the location of a GDT description structure:</p>
+<p><img src="gdtr.png" alt="GDTR"></p>
+<p>And the C structure:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">struct</span> gdtr {
+    u16 limite;
+    u32 base;
+} __attribute__ ((packed));
+</code></pre>
+<p><strong>Caution:</strong> the directive <code>__attribute__ ((packed))</code> signal to gcc that the structure should use as little memory as possible. Without this directive, gcc include some bytes to optimize the memory alignment and the access during execution.</p>
+<p>Now we need to define our GDT table and then load it using LGDT. The GDT table can be stored wherever we want in memory, its address should just be signaled to the process using the GDTR registry.</p>
+<p>The GDT table is composed of segments with the following structure:</p>
+<p><img src="gdtentry.png" alt="GDTR"></p>
+<p>And the C structure:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">struct</span> gdtdesc {
+    u16 lim0_15;
+    u16 base0_15;
+    u8 base16_23;
+    u8 acces;
+    u8 lim16_19:<span class="hljs-number">4</span>;
+    u8 other:<span class="hljs-number">4</span>;
+    u8 base24_31;
+} __attribute__ ((packed));
+</code></pre>
+<h4 id="how-to-define-our-gdt-table">How to define our GDT table?</h4>
+<p>We need now to define our GDT in memory and finally load it using the GDTR registry.</p>
+<p>We are going to store our GDT at the address:</p>
+<pre><code class="lang-cpp"><span class="hljs-preprocessor">#<span class="hljs-keyword">define</span> GDTBASE    0x00000800</span>
+</code></pre>
+<p>The function <strong>init_gdt_desc</strong> in <a href="https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System/blob/master/src/kernel/arch/x86/x86.cc" target="_blank">x86.cc</a> initialize a gdt segment descriptor.</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">void</span> init_gdt_desc(u32 base, u32 limite, u8 acces, u8 other, <span class="hljs-keyword">struct</span> gdtdesc *desc)
+{
+    desc-&gt;lim0_15 = (limite &amp; <span class="hljs-number">0xffff</span>);
+    desc-&gt;base0_15 = (base &amp; <span class="hljs-number">0xffff</span>);
+    desc-&gt;base16_23 = (base &amp; <span class="hljs-number">0xff0000</span>) &gt;&gt; <span class="hljs-number">16</span>;
+    desc-&gt;acces = acces;
+    desc-&gt;lim16_19 = (limite &amp; <span class="hljs-number">0xf0000</span>) &gt;&gt; <span class="hljs-number">16</span>;
+    desc-&gt;other = (other &amp; <span class="hljs-number">0xf</span>);
+    desc-&gt;base24_31 = (base &amp; <span class="hljs-number">0xff000000</span>) &gt;&gt; <span class="hljs-number">24</span>;
+    <span class="hljs-keyword">return</span>;
+}
+</code></pre>
+<p>And the function <strong>init_gdt</strong> initialize the GDT, some parts of the below function will be explained later and are used for multitasking.</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">void</span> init_gdt(<span class="hljs-keyword">void</span>)
+{
+    default_tss.debug_flag = <span class="hljs-number">0x00</span>;
+    default_tss.io_map = <span class="hljs-number">0x00</span>;
+    default_tss.esp0 = <span class="hljs-number">0x1FFF0</span>;
+    default_tss.ss0 = <span class="hljs-number">0x18</span>;
+
+    <span class="hljs-comment">/* initialize gdt segments */</span>
+    init_gdt_desc(<span class="hljs-number">0x0</span>, <span class="hljs-number">0x0</span>, <span class="hljs-number">0x0</span>, <span class="hljs-number">0x0</span>, &amp;kgdt[<span class="hljs-number">0</span>]);
+    init_gdt_desc(<span class="hljs-number">0x0</span>, <span class="hljs-number">0xFFFFF</span>, <span class="hljs-number">0x9B</span>, <span class="hljs-number">0x0D</span>, &amp;kgdt[<span class="hljs-number">1</span>]);    <span class="hljs-comment">/* code */</span>
+    init_gdt_desc(<span class="hljs-number">0x0</span>, <span class="hljs-number">0xFFFFF</span>, <span class="hljs-number">0x93</span>, <span class="hljs-number">0x0D</span>, &amp;kgdt[<span class="hljs-number">2</span>]);    <span class="hljs-comment">/* data */</span>
+    init_gdt_desc(<span class="hljs-number">0x0</span>, <span class="hljs-number">0x0</span>, <span class="hljs-number">0x97</span>, <span class="hljs-number">0x0D</span>, &amp;kgdt[<span class="hljs-number">3</span>]);        <span class="hljs-comment">/* stack */</span>
+
+    init_gdt_desc(<span class="hljs-number">0x0</span>, <span class="hljs-number">0xFFFFF</span>, <span class="hljs-number">0xFF</span>, <span class="hljs-number">0x0D</span>, &amp;kgdt[<span class="hljs-number">4</span>]);    <span class="hljs-comment">/* ucode */</span>
+    init_gdt_desc(<span class="hljs-number">0x0</span>, <span class="hljs-number">0xFFFFF</span>, <span class="hljs-number">0xF3</span>, <span class="hljs-number">0x0D</span>, &amp;kgdt[<span class="hljs-number">5</span>]);    <span class="hljs-comment">/* udata */</span>
+    init_gdt_desc(<span class="hljs-number">0x0</span>, <span class="hljs-number">0x0</span>, <span class="hljs-number">0xF7</span>, <span class="hljs-number">0x0D</span>, &amp;kgdt[<span class="hljs-number">6</span>]);        <span class="hljs-comment">/* ustack */</span>
+
+    init_gdt_desc((u32) &amp; default_tss, <span class="hljs-number">0x67</span>, <span class="hljs-number">0xE9</span>, <span class="hljs-number">0x00</span>, &amp;kgdt[<span class="hljs-number">7</span>]);    <span class="hljs-comment">/* descripteur de tss */</span>
+
+    <span class="hljs-comment">/* initialize the gdtr structure */</span>
+    kgdtr.limite = GDTSIZE * <span class="hljs-number">8</span>;
+    kgdtr.base = GDTBASE;
+
+    <span class="hljs-comment">/* copy the gdtr to its memory area */</span>
+    <span class="hljs-built_in">memcpy</span>((<span class="hljs-keyword">char</span> *) kgdtr.base, (<span class="hljs-keyword">char</span> *) kgdt, kgdtr.limite);
+
+    <span class="hljs-comment">/* load the gdtr registry */</span>
+    <span class="hljs-keyword">asm</span>(<span class="hljs-string">"lgdtl (kgdtr)"</span>);
+
+    <span class="hljs-comment">/* initiliaz the segments */</span>
+    <span class="hljs-keyword">asm</span>(<span class="hljs-string">"   movw $0x10, %ax    \n \
+            movw %ax, %ds    \n \
+            movw %ax, %es    \n \
+            movw %ax, %fs    \n \
+            movw %ax, %gs    \n \
+            ljmp $0x08, $next    \n \
+            next:        \n"</span>);
+}
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../Chapter-5/README.html" class="navigation navigation-prev " aria-label="Previous page: Base classes for managing x86 architecture"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../Chapter-7/README.html" class="navigation navigation-next " aria-label="Next page: IDT and interrupts"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-infinitescroll/plugin.js"></script>
+    
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
