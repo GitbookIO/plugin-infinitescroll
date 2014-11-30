@@ -2,7 +2,7 @@
     "name": "gitbook-plugin-infinitescroll",
     "description": "Infinite scrolling in your gitbook",
     "main": "index.js",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "engines": {
         "gitbook": "*"
     },
